@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-protocol ErrorHandlerProtocol {
+public protocol ErrorHandlerProtocol {
     func handleFatalError(_ message: String)
 }
 
 public class ProductionHandleFatalError: ErrorHandlerProtocol {
-    func handleFatalError(_ message: String) {
+    public func handleFatalError(_ message: String) {
         fatalError(message)
     }
 }
