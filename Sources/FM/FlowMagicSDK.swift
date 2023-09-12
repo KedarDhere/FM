@@ -18,7 +18,7 @@ public class ProductionHandleFatalError: ErrorHandlerProtocol {
     }
 }
 
-protocol ScreenFlowProviding {
+public protocol ScreenFlowProviding {
     func registerScreen(screenName: String, portNames: [String], view: any View)
     func addConnection(fromPort: String, toScreen: String)
     func getDestinationScreen(portName: String) -> any View

@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-@MainActor
 public class FlowMagicViewModel: ObservableObject {
     // MARK: - Properties
 
@@ -19,7 +18,7 @@ public class FlowMagicViewModel: ObservableObject {
 
     // MARK: - Initialization
 
-    public init(service: WebService, screenFlowProvider: ScreenFlowProviding) {
+    init(service: WebService, screenFlowProvider: ScreenFlowProviding) {
         self.service = service
         self.screenFlowProvider = screenFlowProvider
     }
