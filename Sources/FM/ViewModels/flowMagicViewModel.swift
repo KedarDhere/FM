@@ -26,7 +26,7 @@ public class FlowMagicViewModel: ObservableObject {
     // MARK: - Methods
 
     /// Make the network call and fetch the latest screen data from the server
-    func load() async {
+    public func load() async {
         do {
             let screenFlowModel = try await service.loadUrlData(resource: Constants.Urls.applicationScreenFlow)
             print(screenFlowModel)
@@ -38,7 +38,7 @@ public class FlowMagicViewModel: ObservableObject {
 
     }
 
-    func renderDestinationView(screenFlowModel: ScreenFlowModel) {
+    public func renderDestinationView(screenFlowModel: ScreenFlowModel) {
         var destinationView: AnyView = ProgressView().toAnyView()
         let screens = screenFlowProvider.getScreens()
         for screenInfo in screenFlowModel.applicationScreenFlow {
