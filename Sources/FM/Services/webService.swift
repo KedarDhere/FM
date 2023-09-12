@@ -21,12 +21,12 @@ private extension URLResponse {
     }
 }
 
-protocol WebService {
+public protocol WebService {
     func loadUrlData(resource: String) async throws -> ScreenFlowModel
 }
 
-class WebServiceImpl: WebService {
-    func loadUrlData(resource: String) async throws -> ScreenFlowModel {
+public class WebServiceImpl: WebService {
+    public func loadUrlData(resource: String) async throws -> ScreenFlowModel {
         guard let url = URL(string: resource) else {
             throw NetworkError.invalidUrl
         }

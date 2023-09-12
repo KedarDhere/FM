@@ -18,7 +18,7 @@ public class FlowMagicViewModel: ObservableObject {
 
     // MARK: - Initialization
 
-    init(service: WebService, screenFlowProvider: ScreenFlowProviding) {
+    public init(service: WebService, screenFlowProvider: ScreenFlowProviding) {
         self.service = service
         self.screenFlowProvider = screenFlowProvider
     }

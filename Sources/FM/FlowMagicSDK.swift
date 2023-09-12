@@ -46,7 +46,7 @@ public class ScreenFlowProvider: ScreenFlowProviding {
 
     // MARK: - Methods
 
-    func registerScreen(screenName: String, portNames: [String], view: any View) {
+    public func registerScreen(screenName: String, portNames: [String], view: any View) {
         guard screens[screenName] == nil else {
             return
         }
@@ -54,7 +54,7 @@ public class ScreenFlowProvider: ScreenFlowProviding {
         screens[screenName] = (AnyView(view), portNames)
     }
 
-    func addConnection(fromPort: String, toScreen: String) {
+    public func addConnection(fromPort: String, toScreen: String) {
         guard let view = screens[toScreen]?.view else {
             errorHandle.handleFatalError("Value of screen is nil")
             return
@@ -64,20 +64,20 @@ public class ScreenFlowProvider: ScreenFlowProviding {
         destinationViewsFromPorts[portName] = view
     }
 
-    func getDestinationScreen(portName: String) -> any View {
+    public func getDestinationScreen(portName: String) -> any View {
         print(portName)
         return destinationViewsFromPorts[portName]!
     }
 
-    func getScreens() -> [String: (view: AnyView, portNames: [String])] {
+    public func getScreens() -> [String: (view: AnyView, portNames: [String])] {
         return screens
     }
 
-    func getDestinationViewsFromPorts() -> [String: any View] {
+    public func getDestinationViewsFromPorts() -> [String: any View] {
         return destinationViewsFromPorts
     }
 
-    func updateDestinationViewsFromPorts(portName: String, destinationView: AnyView) {
+    public func updateDestinationViewsFromPorts(portName: String, destinationView: AnyView) {
         destinationViewsFromPorts[portName] = destinationView
     }
 }
