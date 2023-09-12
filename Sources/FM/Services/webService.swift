@@ -26,6 +26,7 @@ public protocol WebService {
 }
 
 public class WebServiceImpl: WebService {
+    public init(){}
     public func loadUrlData(resource: String) async throws -> ScreenFlowModel {
         guard let url = URL(string: resource) else {
             throw NetworkError.invalidUrl

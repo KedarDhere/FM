@@ -29,13 +29,13 @@ public protocol ScreenFlowProviding {
 
 public class ScreenFlowProvider: ScreenFlowProviding {
 
-    static var shared = ScreenFlowProvider()
+    public static var shared = ScreenFlowProvider()
     let errorHandle: ErrorHandlerProtocol = ProductionHandleFatalError()
 
     // MARK: - Properties
 
-    var screens: [String: (view: AnyView, portNames: [String])]
-    var destinationViewsFromPorts: [String: any View]
+    public var screens: [String: (view: AnyView, portNames: [String])]
+    public var destinationViewsFromPorts: [String: any View]
 
     // MARK: - Initialization
 
