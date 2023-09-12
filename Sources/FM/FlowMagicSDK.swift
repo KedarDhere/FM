@@ -35,7 +35,7 @@ public class ScreenFlowProvider: ScreenFlowProviding {
     // MARK: - Properties
 
     public var screens: [String: (view: AnyView, portNames: [String])]
-    public var destinationViewsFromPorts: [String: any View]
+    public var destinationViewsFromPorts: [String: AnyView]
 
     // MARK: - Initialization
 
